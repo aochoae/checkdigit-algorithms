@@ -6,7 +6,7 @@
     <groupId>dev.luisalberto.checkdigit</groupId>
     <artifactId>checkdigit-algorithms</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>checkdigit-algorithms</name>
     <description>Damm, Luhn and Verhoeff algorithms</description>
 

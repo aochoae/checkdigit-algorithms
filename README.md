@@ -14,5 +14,7 @@ Check digit algorithms requires Java 8 or above.
 
 ## License
 
+Copyright 2020 Luis A. Ochoa
+
 This project is licensed under the Apache License, Version 2.0.
 See [LICENSE](LICENSE) for the full license text.
