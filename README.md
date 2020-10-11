@@ -6,6 +6,27 @@ Algorithms:
 * Luhn algorithm
 * Verhoeff algorithm
 
+## Getting started
+
+We need to create a Java file to contain the following code:
+
+    package demo;
+
+    import dev.luisalberto.checkdigit.CheckDigit;
+    import dev.luisalberto.checkdigit.luhn.LuhnCheckDigit;
+
+    public class App {
+    
+        public static void main(String args[]) {
+ 
+            CheckDigit checkDigit = new LuhnCheckDigit();
+
+            System.out.println(checkDigit.generate("4872148"));
+
+        }
+    }
+
+
 ## Declare dependencies
 
 Add the following dependency to your project:
@@ -24,8 +45,8 @@ Add the following dependency to your project:
 
 ## Building from Source
 
-Check digit algorithms requires Java 8 or above. To build everything, use the
-`package` task:
+Check digit algorithms requires Java 8 or above. To build, use the `package`
+task:
 
     ./mvnw clean package -Dmaven.test.skip=true
 
