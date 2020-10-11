@@ -6,9 +6,26 @@ Algorithms:
 * Luhn algorithm
 * Verhoeff algorithm
 
-## Build
+## Declare dependencies
 
-Check digit algorithms requires Java 8 or above. 
+Add the following dependency to your project:
+
+### Gradle
+
+    dependencies {
+        implementation 'dev.luisalberto.checkdigit:checkdigit-algorithms:1.0.0'
+    }
+
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/luisalberto/mvn" 
+        }
+    }
+
+## Building from Source
+
+Check digit algorithms requires Java 8 or above. To build everything, use the
+`package` task:
 
     ./mvnw clean package -Dmaven.test.skip=true
 
