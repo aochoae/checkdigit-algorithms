@@ -37,12 +37,22 @@ Add the following dependency to your project:
 ### Gradle
 
     dependencies {
-        implementation 'io.github.aochoae.checkdigit:checkdigit-algorithms:1.0.0'
+        implementation 'io.github.aochoae:checkdigit-algorithms:1.0.0'
     }
 
     repositories {
         mavenLocal()
     }
+
+### Maven
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.aochoae</groupId>
+            <artifactId>checkdigit-algorithms</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
 ## Maven local repository
 
