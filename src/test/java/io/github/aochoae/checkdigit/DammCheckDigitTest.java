@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Luis A. Ochoa
+ * Copyright 2020-2021 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dev.luisalberto.checkdigit.verhoeff;
+package io.github.aochoae.checkdigit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -23,30 +23,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class VerhoeffCheckDigitTest {
+public class DammCheckDigitTest {
 
-    private final VerhoeffCheckDigit verhoeffCheckDigit = new VerhoeffCheckDigit();
+    private final DammCheckDigit dammCheckDigit = new DammCheckDigit();
 
     @Test
-    public void generate() {
-        assertEquals("0262533057", verhoeffCheckDigit.generate("026253305"));
+    void generate() {
+        assertEquals("280419866", dammCheckDigit.generate("28041986"));
     }
 
     @Test
-    public void isValid() {
-        assertTrue(verhoeffCheckDigit.isValid("0262533057"));
+    void isValid() {
+        assertTrue(dammCheckDigit.isValid("080419879"));
     }
 
     @Test
-    public void isNotValid() {
-        assertFalse(verhoeffCheckDigit.isValid("0262533056"));
+    void isNotValid() {
+        assertFalse(dammCheckDigit.isValid("15195079090"));
     }
 
     @Test
-    public void digits() {
+    void digits() {
 
         assertThrows(IllegalArgumentException.class, () -> {
-            verhoeffCheckDigit.generate("123e-10");
+            dammCheckDigit.generate("0123456789ABCDEF");
         });
     }
 }

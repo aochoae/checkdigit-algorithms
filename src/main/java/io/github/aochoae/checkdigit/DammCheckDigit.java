@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Luis A. Ochoa
+ * Copyright 2020-2021 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package dev.luisalberto.checkdigit.damm;
-
-import dev.luisalberto.checkdigit.CheckDigit;
+package io.github.aochoae.checkdigit;
 
 /**
  * @author Luis A. Ochoa

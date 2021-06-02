@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Luis A. Ochoa
+ * Copyright 2020-2021 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package dev.luisalberto.checkdigit.verhoeff;
+package io.github.aochoae.checkdigit;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
-
-import dev.luisalberto.checkdigit.CheckDigit;
 
 /**
  * @author Luis A. Ochoa

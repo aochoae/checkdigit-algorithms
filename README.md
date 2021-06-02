@@ -12,8 +12,8 @@ We need to create a Java file to contain the following code:
 
     package demo;
 
-    import dev.luisalberto.checkdigit.CheckDigit;
-    import dev.luisalberto.checkdigit.luhn.LuhnCheckDigit;
+    import io.github.aochoae.checkdigit.CheckDigit;
+    import io.github.aochoae.checkdigit.LuhnCheckDigit;
 
     public class App {
     
@@ -26,6 +26,9 @@ We need to create a Java file to contain the following code:
         }
     }
 
+The output must be
+
+    48721484
 
 ## Declare dependencies
 
@@ -34,14 +37,16 @@ Add the following dependency to your project:
 ### Gradle
 
     dependencies {
-        implementation 'dev.luisalberto.checkdigit:checkdigit-algorithms:1.0.0'
+        implementation 'io.github.aochoae.checkdigit:checkdigit-algorithms:1.0.0'
     }
 
     repositories {
-        maven {
-            url  "https://dl.bintray.com/luisalberto/mvn" 
-        }
+        mavenLocal()
     }
+
+## Maven local repository
+
+    ./mvnw install -Dmaven.test.skip=true
 
 ## Building from Source
 
@@ -52,7 +57,7 @@ task:
 
 ## License
 
-Copyright 2020 Luis A. Ochoa
+Copyright 2020-2021 Luis A. Ochoa
 
 This project is licensed under the Apache License, Version 2.0.
 See [LICENSE](LICENSE) for the full license text.

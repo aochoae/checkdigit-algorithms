@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Luis A. Ochoa
+ * Copyright 2020-2021 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package dev.luisalberto.checkdigit.luhn;
+package io.github.aochoae.checkdigit;
 
 import java.util.Arrays;
-
-import dev.luisalberto.checkdigit.CheckDigit;
 
 /**
  * @author Luis A. Ochoa
@@ -27,12 +25,12 @@ public class LuhnCheckDigit implements CheckDigit {
 
     /**
      * Gives the substitute for each digit.
-     * 
+     *
      * <pre>
      * 4 * 2 = 8
      * 8 * 2 = 16 => 1 + 6 = 7
      * </pre>
-     * 
+     *
      * <pre>
      * 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
      * 0, 2, 4, 6, 8, 1, 3, 5, 7, 9
@@ -56,9 +54,8 @@ public class LuhnCheckDigit implements CheckDigit {
     /**
      * Computes a check digit or verify numbers that already have a check digit
      * appended.
-     * 
-     * @param rawSequence
-     * @param length
+     *
+     * @param sequence
      * @return
      */
     private String compute(final int[] sequence) {

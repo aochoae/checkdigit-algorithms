@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Luis A. Ochoa
+ * Copyright 2020-2021 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dev.luisalberto.checkdigit.luhn;
+package io.github.aochoae.checkdigit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -28,22 +28,22 @@ public class LuhnCheckDigitTest {
     LuhnCheckDigit luhnCheckDigit = new LuhnCheckDigit();
 
     @Test
-    public void generate() {
+    void generate() {
         assertEquals("48721484", luhnCheckDigit.generate("4872148"));
     }
 
     @Test
-    public void isValid() {
+    void isValid() {
         assertTrue(luhnCheckDigit.isValid("48721484"));
     }
 
     @Test
-    public void isNotValid() {
+    void isNotValid() {
         assertFalse(luhnCheckDigit.isValid("48721489"));
     }
 
     @Test
-    public void digits() {
+    void digits() {
 
         assertThrows(IllegalArgumentException.class, () -> {
             luhnCheckDigit.generate("123 456 789");

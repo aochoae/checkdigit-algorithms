@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Luis A. Ochoa
+ * Copyright 2020-2021 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package dev.luisalberto.checkdigit;
+package io.github.aochoae.checkdigit;
 
 /**
  * @author Luis A. Ochoa
@@ -23,7 +23,7 @@ public interface CheckDigit {
 
     /**
      * Appends the check digit to a given digit sequence.
-     * 
+     *
      * @param sequence
      * @return
      */
@@ -31,7 +31,7 @@ public interface CheckDigit {
 
     /**
      * Verifies whether a digit sequence is valid.
-     * 
+     *
      * @param sequence
      * @return
      */
@@ -39,7 +39,7 @@ public interface CheckDigit {
 
     /**
      * Retrieves an array containing the digit sequence.
-     * 
+     *
      * @param sequence
      * @return
      */
@@ -62,7 +62,7 @@ public interface CheckDigit {
 
     /**
      * Retrieves a string containing the digit sequence with the check digit.
-     * 
+     *
      * @param sequence
      * @param digit
      * @return

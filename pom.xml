@@ -10,13 +10,28 @@
     <name>checkdigit-algorithms</name>
     <description>Damm, Luhn and Verhoeff algorithms</description>
     <url>https://github.com/aochoae/checkdigit-algorithms</url>
-
+    <developers>
+        <developer>
+            <name>Luis A. Ochoa</name>
+            <url>https://github.com/aochoae</url>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git://github.com/aochoae/checkdigit-algorithms.git</connection>
+        <developerConnection>scm:git:ssh://github.com:aochoae/checkdigit-algorithms.git</developerConnection>
+        <url>https://github.com/aochoae/checkdigit-algorithms/tree/main</url>
+    </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -25,7 +40,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -35,13 +49,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>bintray-luisalberto-mvn</id>
-            <name>luisalberto-mvn</name>
-            <url>https://api.bintray.com/maven/luisalberto/mvn/checkdigit-algorithms/;publish=1</url>
-        </repository>
-    </distributionManagement>
-
 </project>
