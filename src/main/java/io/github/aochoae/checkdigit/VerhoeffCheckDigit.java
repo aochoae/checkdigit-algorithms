@@ -89,10 +89,8 @@ public class VerhoeffCheckDigit implements CheckDigit {
 
     private int[] revert(int[] rawSequence) {
 
-        int[] revert = IntStream.range(0, rawSequence.length)
+        return IntStream.range(0, rawSequence.length)
             .map(i -> rawSequence[rawSequence.length - i - 1])
             .toArray();
-
-        return revert;
     }
 }
