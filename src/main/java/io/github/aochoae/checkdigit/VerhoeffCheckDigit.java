@@ -20,7 +20,10 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
+ * Verhoeff algorithm.
+ *
  * @author Luis A. Ochoa
+ * @version 1.0.0
  */
 public class VerhoeffCheckDigit implements CheckDigit {
 
@@ -63,6 +66,9 @@ public class VerhoeffCheckDigit implements CheckDigit {
         return (getLastDigit(revert) == 0);
     }
 
+    /**
+     * Verhoeff algorithm.
+     */
     private String compute(final int[] sequence) {
 
         int[] newSequence = Arrays.copyOf(sequence, sequence.length + 1);
@@ -76,6 +82,9 @@ public class VerhoeffCheckDigit implements CheckDigit {
         return toString(sequence, lastDigit);
     }
 
+    /**
+     * Gets a digit from D matrix.
+     */
     private int getLastDigit(int[] sequence) {
 
         int c = 0;
@@ -87,6 +96,9 @@ public class VerhoeffCheckDigit implements CheckDigit {
         return c;
     }
 
+    /**
+     * Reverts a sequence.
+     */
     private int[] revert(int[] rawSequence) {
 
         return IntStream.range(0, rawSequence.length)

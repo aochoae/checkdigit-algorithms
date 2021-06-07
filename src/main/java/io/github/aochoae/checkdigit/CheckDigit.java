@@ -17,31 +17,34 @@
 package io.github.aochoae.checkdigit;
 
 /**
+ * Check Digit interface.
+ *
  * @author Luis A. Ochoa
+ * @version 1.0.0
  */
 public interface CheckDigit {
 
     /**
      * Appends the check digit to a given digit sequence.
      *
-     * @param sequence
-     * @return
+     * @param sequence Digit sequence.
+     * @return The sequence of digits with the calculated check digit.
      */
     String generate(String sequence);
 
     /**
      * Verifies whether a digit sequence is valid.
      *
-     * @param sequence
-     * @return
+     * @param sequence Digit sequence.
+     * @return <code>true</code> if the check digit is correct; <code>false</code> otherwise.
      */
     boolean isValid(String sequence);
 
     /**
      * Retrieves an array containing the digit sequence.
      *
-     * @param sequence
-     * @return
+     * @param sequence Digit sequence to be computed.
+     * @return An array containing all of the digits in this sequence.
      */
     default int[] toDigits(String sequence) {
 
@@ -63,16 +66,16 @@ public interface CheckDigit {
     /**
      * Retrieves a string containing the digit sequence with the check digit.
      *
-     * @param sequence
-     * @param digit
-     * @return
+     * @param sequence Digit sequence.
+     * @param digit Check digit.
+     * @return The sequence of digits with the calculated check digit.
      */
     default String toString(int[] sequence, int digit) {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < sequence.length; i++) {
-            stringBuilder.append(sequence[i]);
+        for (int d : sequence) {
+            stringBuilder.append(d);
         }
 
         stringBuilder.append(digit);

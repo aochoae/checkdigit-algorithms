@@ -19,7 +19,10 @@ package io.github.aochoae.checkdigit;
 import java.util.Arrays;
 
 /**
+ * Luhn algorithm.
+ *
  * @author Luis A. Ochoa
+ * @version 1.0.0
  */
 public class LuhnCheckDigit implements CheckDigit {
 
@@ -36,7 +39,7 @@ public class LuhnCheckDigit implements CheckDigit {
      * 0, 2, 4, 6, 8, 1, 3, 5, 7, 9
      * </pre>
      */
-    private static final int[] SUBTITUTE = { 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 };
+    private static final int[] SUBSTITUTE = { 0, 2, 4, 6, 8, 1, 3, 5, 7, 9 };
 
     @Override
     public String generate(String sequence) {
@@ -46,24 +49,20 @@ public class LuhnCheckDigit implements CheckDigit {
     @Override
     public boolean isValid(String sequence) {
 
-        String subSequense = sequence.substring(0, sequence.length() - 1);
+        String subSequence = sequence.substring(0, sequence.length() - 1);
 
-        return sequence.equals(compute(toDigits(subSequense)));
+        return sequence.equals(compute(toDigits(subSequence)));
     }
 
     /**
-     * Computes a check digit or verify numbers that already have a check digit
-     * appended.
-     *
-     * @param sequence
-     * @return
+     * Luhn algorithm.
      */
     private String compute(final int[] sequence) {
 
         int[] newSequence = new int[sequence.length];
 
         for (int i = 0; i < sequence.length; i++) {
-            newSequence[i] = (i % 2 == 0) ? SUBTITUTE[sequence[i]] : sequence[i];
+            newSequence[i] = (i % 2 == 0) ? SUBSTITUTE[sequence[i]] : sequence[i];
         }
 
         int summation = Arrays.stream(newSequence).sum();

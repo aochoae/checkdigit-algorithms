@@ -17,7 +17,10 @@
 package io.github.aochoae.checkdigit;
 
 /**
+ * Damm algorithm.
+ *
  * @author Luis A. Ochoa
+ * @version 1.0.0
  */
 public class DammCheckDigit implements CheckDigit {
 
@@ -47,6 +50,9 @@ public class DammCheckDigit implements CheckDigit {
         return sequence.equals(compute(toDigits(subSequence)));
     }
 
+    /**
+     * Damm algorithm
+     */
     private String compute(final int[] sequence) {
 
         int lastDigit = 0;
