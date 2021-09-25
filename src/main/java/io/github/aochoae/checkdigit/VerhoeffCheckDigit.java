@@ -25,7 +25,7 @@ import java.util.stream.IntStream;
  * @author Luis A. Ochoa
  * @version 1.0.0
  */
-public class VerhoeffCheckDigit implements CheckDigit {
+public final class VerhoeffCheckDigit implements CheckDigit {
 
     private static final int[][] P = {
         { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 },

@@ -16,6 +16,9 @@
 
 package io.github.aochoae.checkdigit;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * Check Digit interface.
  *
@@ -44,7 +47,7 @@ public interface CheckDigit {
      * Retrieves an array containing the digit sequence.
      *
      * @param sequence Digit sequence to be computed.
-     * @return An array containing all of the digits in this sequence.
+     * @return An array containing all the digits in this sequence.
      */
     default int[] toDigits(String sequence) {
 
@@ -54,13 +57,9 @@ public interface CheckDigit {
 
         String[] characters = sequence.split("");
 
-        int[] digits = new int[characters.length];
-
-        for (int i = 0; i < digits.length; i++) {
-            digits[i] = Integer.parseInt(characters[i]);
-        }
-
-        return digits;
+        return Arrays.stream(characters)
+            .mapToInt(Integer::parseInt)
+            .toArray();
     }
 
     /**
@@ -72,14 +71,17 @@ public interface CheckDigit {
      */
     default String toString(int[] sequence, int digit) {
 
-        StringBuilder stringBuilder = new StringBuilder();
+        // Current length
+        int last = sequence.length;
 
-        for (int d : sequence) {
-            stringBuilder.append(d);
-        }
+        // Add new digit
+        int[] newSequence = Arrays.copyOf(sequence, last + 1);
 
-        stringBuilder.append(digit);
+        newSequence[last] = digit;
 
-        return stringBuilder.toString();
+        // To String
+        return Arrays.stream(newSequence)
+            .mapToObj(String::valueOf)
+            .collect(Collectors.joining(""));
     }
 }
