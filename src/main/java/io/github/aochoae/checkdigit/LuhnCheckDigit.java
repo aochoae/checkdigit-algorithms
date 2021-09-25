@@ -24,7 +24,7 @@ import java.util.Arrays;
  * @author Luis A. Ochoa
  * @version 1.0.0
  */
-public class LuhnCheckDigit implements CheckDigit {
+public final class LuhnCheckDigit implements CheckDigit {
 
     /**
      * Gives the substitute for each digit.

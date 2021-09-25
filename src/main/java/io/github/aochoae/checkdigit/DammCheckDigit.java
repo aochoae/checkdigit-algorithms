@@ -22,7 +22,7 @@ package io.github.aochoae.checkdigit;
  * @author Luis A. Ochoa
  * @version 1.0.0
  */
-public class DammCheckDigit implements CheckDigit {
+public final class DammCheckDigit implements CheckDigit {
 
     private static final int[][] TABLE = {
         { 0, 3, 1, 7, 5, 9, 8, 6, 4, 2 },
@@ -57,12 +57,9 @@ public class DammCheckDigit implements CheckDigit {
 
         int lastDigit = 0;
 
-        int col = 0;
         int row = 0;
 
-        for (int i = 0; i < sequence.length; i++) {
-
-            col = sequence[i];
+        for (int col : sequence) {
 
             lastDigit = TABLE[row][col];
 
