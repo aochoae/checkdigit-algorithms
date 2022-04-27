@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2021 Luis A. Ochoa
+ * Copyright 2020-2022 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +40,5 @@ class LuhnCheckDigitTest {
     @Test
     void isNotValid() {
         assertFalse(luhnCheckDigit.isValid("48721489"));
-    }
-
-    @Test
-    void digits() {
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            luhnCheckDigit.generate("123 456 789");
-        });
     }
 }

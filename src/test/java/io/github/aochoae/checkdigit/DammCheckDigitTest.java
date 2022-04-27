@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2021 Luis A. Ochoa
+ * Copyright 2020-2022 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package io.github.aochoae.checkdigit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -40,13 +39,5 @@ class DammCheckDigitTest {
     @Test
     void isNotValid() {
         assertFalse(dammCheckDigit.isValid("15195079090"));
-    }
-
-    @Test
-    void digits() {
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            dammCheckDigit.generate("0123456789ABCDEF");
-        });
     }
 }
