@@ -52,7 +52,7 @@ public interface CheckDigit {
     default int[] toDigits(String sequence) {
 
         if (!sequence.matches("\\d+")) {
-            throw new IllegalArgumentException();
+            throw new CheckDigitException();
         }
 
         String[] characters = sequence.split("");
