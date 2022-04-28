@@ -40,7 +40,7 @@ Add the following dependency to your project:
 ### Gradle
 
     dependencies {
-        implementation 'io.github.aochoae:checkdigit-algorithms:2.0.0'
+        implementation 'io.github.aochoae:checkdigit-algorithms:2.1.0'
     }
 
 ### Maven
@@ -49,13 +49,13 @@ Add the following dependency to your project:
         <dependency>
             <groupId>io.github.aochoae</groupId>
             <artifactId>checkdigit-algorithms</artifactId>
-            <version>2.0.0</version>
+            <version>2.1.0</version>
         </dependency>
     </dependencies>
 
 ## License
 
-Copyright 2020-2021 Luis A. Ochoa
+Copyright 2020-2022 Luis A. Ochoa
 
 This project is licensed under the Apache License, Version 2.0.
 See [LICENSE](LICENSE) for the full license text.
