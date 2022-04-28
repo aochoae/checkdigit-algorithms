@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"io.github.aochoae.checkdigit","l":"CheckDigit"},{"p":"io.github.aochoae.checkdigit","l":"CheckDigitException"},{"p":"io.github.aochoae.checkdigit","l":"DammCheckDigit"},{"p":"io.github.aochoae.checkdigit","l":"LuhnCheckDigit"},{"p":"io.github.aochoae.checkdigit","l":"VerhoeffCheckDigit"}]

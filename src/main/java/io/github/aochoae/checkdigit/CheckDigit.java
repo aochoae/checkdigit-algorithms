@@ -47,6 +47,7 @@ public interface CheckDigit {
      * Retrieves an array containing the digit sequence.
      *
      * @param sequence Digit sequence to be computed.
+     * @throws CheckDigitException Indicates that the sequence is incorrect.
      * @return An array containing all the digits in this sequence.
      */
     default int[] toDigits(String sequence) {
