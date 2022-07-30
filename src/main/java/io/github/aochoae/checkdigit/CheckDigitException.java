@@ -24,6 +24,9 @@ package io.github.aochoae.checkdigit;
  */
 public class CheckDigitException extends IllegalArgumentException {
 
+    /**
+     * The sequence can only contain digits.
+     */
     public CheckDigitException() {
         super("The sequence can only contain digits.");
     }

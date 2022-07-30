@@ -59,10 +59,10 @@ public final class LuhnCheckDigit implements CheckDigit {
      */
     private String compute(final int[] sequence) {
 
-        int[] newSequence = new int[sequence.length];
+        int[] newSequence = Arrays.copyOf(sequence, sequence.length);
 
-        for (int i = 0; i < sequence.length; i++) {
-            newSequence[i] = (i % 2 == 0) ? SUBSTITUTE[sequence[i]] : sequence[i];
+        for (int i = 0; i < sequence.length; i += 2) {
+            newSequence[i] = SUBSTITUTE[sequence[i]];
         }
 
         int summation = Arrays.stream(newSequence).sum();
