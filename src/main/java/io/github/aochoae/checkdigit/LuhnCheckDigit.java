@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2021 Luis A. Ochoa
+ * Copyright 2020-2023 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ public final class LuhnCheckDigit implements CheckDigit {
 
         int[] newSequence = Arrays.copyOf(sequence, sequence.length);
 
-        for (int i = 0; i < sequence.length; i += 2) {
+        for (int i = (sequence.length - 1); i >= 0; i -= 2) {
             newSequence[i] = SUBSTITUTE[sequence[i]];
         }
 
