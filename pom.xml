@@ -6,7 +6,7 @@
     <groupId>io.github.aochoae</groupId>
     <artifactId>checkdigit-algorithms</artifactId>
     <packaging>jar</packaging>
-    <version>2.1.1</version>
+    <version>2.1.2</version>
     <name>checkdigit-algorithms</name>
     <description>Damm, Luhn and Verhoeff algorithms</description>
     <url>https://github.com/aochoae/checkdigit-algorithms</url>

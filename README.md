@@ -40,7 +40,7 @@ Add the following dependency to your project:
 ### Gradle
 
     dependencies {
-        implementation 'io.github.aochoae:checkdigit-algorithms:2.1.0'
+        implementation 'io.github.aochoae:checkdigit-algorithms:2.1.2'
     }
 
 ### Maven
@@ -49,7 +49,7 @@ Add the following dependency to your project:
         <dependency>
             <groupId>io.github.aochoae</groupId>
             <artifactId>checkdigit-algorithms</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.2</version>
         </dependency>
     </dependencies>
 
