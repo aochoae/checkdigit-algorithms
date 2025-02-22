@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 Luis A. Ochoa
+ * Copyright 2020-2025 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,9 @@
 package io.github.aochoae.checkdigit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 /**
  * <a href="https://www.bincodes.com/random-creditcard-generator/">Credit Card Number Generator</a>
@@ -29,21 +28,15 @@ class LuhnCheckDigitTest {
 
     LuhnCheckDigit luhnCheckDigit = new LuhnCheckDigit();
 
-    @Test
-    void generate() {
-        assertEquals("48721484", luhnCheckDigit.generate("4872148"));
-        assertEquals("371850480102358", luhnCheckDigit.generate("37185048010235"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Luhn_generate.csv")
+    void testGenerate(String input, String expected) {
+        assertEquals(expected, luhnCheckDigit.generate(input));
     }
 
-    @Test
-    void isValid() {
-        assertTrue(luhnCheckDigit.isValid("48721484"));
-        assertTrue(luhnCheckDigit.isValid("371850480102358"));
-    }
-
-    @Test
-    void isNotValid() {
-        assertFalse(luhnCheckDigit.isValid("48721489"));
-        assertFalse(luhnCheckDigit.isValid("371850480102350"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Luhn_isValid.csv")
+    void testIsValid(boolean expected, String input) {
+        assertEquals(expected, luhnCheckDigit.isValid(input));
     }
 }
