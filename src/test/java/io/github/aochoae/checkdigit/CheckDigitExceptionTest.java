@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Luis A. Ochoa
+ * Copyright 2022-2025 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CheckDigitExceptionTest {
+class CheckDigitExceptionTest {
 
     @Test
     void assertThrowsCheckDigitException() {

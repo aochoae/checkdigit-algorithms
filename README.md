@@ -1,5 +1,7 @@
 # Check digit algorithms
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=aochoae_checkdigit-algorithms&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=aochoae_checkdigit-algorithms)
+
 Algorithms:
 
 * Damm algorithm
@@ -55,7 +57,7 @@ Add the following dependency to your project:
 
 ## License
 
-Copyright 2020-2022 Luis A. Ochoa
+Copyright 2020- Luis A. Ochoa
 
 This project is licensed under the Apache License, Version 2.0.
 See [LICENSE](LICENSE) for the full license text.
