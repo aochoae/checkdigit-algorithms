@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2022 Luis A. Ochoa
+ * Copyright 2020-2025 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,23 @@
 package io.github.aochoae.checkdigit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 class VerhoeffCheckDigitTest {
 
     private final VerhoeffCheckDigit verhoeffCheckDigit = new VerhoeffCheckDigit();
 
-    @Test
-    void generate() {
-        assertEquals("0262533057", verhoeffCheckDigit.generate("026253305"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Verhoeff_generate.csv")
+    void testGenerate(String input, String expected) {
+        assertEquals(expected, verhoeffCheckDigit.generate(input));
     }
 
-    @Test
-    void isValid() {
-        assertTrue(verhoeffCheckDigit.isValid("0262533057"));
-    }
-
-    @Test
-    void isNotValid() {
-        assertFalse(verhoeffCheckDigit.isValid("0262533056"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Verhoeff_isValid.csv")
+    void testIsValid(boolean expected, String input) {
+        assertEquals(expected, verhoeffCheckDigit.isValid(input));
     }
 }

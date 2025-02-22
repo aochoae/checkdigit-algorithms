@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2022 Luis A. Ochoa
+ * Copyright 2020-2025 Luis A. Ochoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,27 +17,23 @@
 package io.github.aochoae.checkdigit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 class DammCheckDigitTest {
 
     private final DammCheckDigit dammCheckDigit = new DammCheckDigit();
 
-    @Test
-    void generate() {
-        assertEquals("280419866", dammCheckDigit.generate("28041986"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Damm_generate.csv")
+    void testGenerate(String input, String expected) {
+        assertEquals(expected, dammCheckDigit.generate(input));
     }
 
-    @Test
-    void isValid() {
-        assertTrue(dammCheckDigit.isValid("080419879"));
-    }
-
-    @Test
-    void isNotValid() {
-        assertFalse(dammCheckDigit.isValid("15195079090"));
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Damm_isValid.csv")
+    void testIsValid(boolean expected, String input) {
+        assertEquals(expected, dammCheckDigit.isValid(input));
     }
 }
