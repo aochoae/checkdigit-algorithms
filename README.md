@@ -2,15 +2,13 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=aochoae_checkdigit-algorithms&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=aochoae_checkdigit-algorithms)
 
+A check digit algorithm works by adding an extra digit, called the check digit, which is calculated from the other digits in the number using a mathematical formula. These algorithms help catch common mistakes like mistyped, missing, or transposed digits.
+
 Algorithms:
 
 * Damm algorithm
 * Luhn algorithm
 * Verhoeff algorithm
-
-Documentation
-
-* [Wiki](https://github.com/aochoae/checkdigit-algorithms/wiki)
 
 ## Getting started
 
@@ -21,9 +19,9 @@ We need to create a Java file to contain the following code:
     import io.github.aochoae.checkdigit.LuhnCheckDigit;
 
     public class App {
-    
+
         public static void main(String args[]) {
- 
+
             LuhnCheckDigit checkDigit = new LuhnCheckDigit();
 
             System.out.println(checkDigit.generate("4872148"));

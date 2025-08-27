@@ -3,14 +3,16 @@ root = true
 
 # Unix-style newlines with a newline ending every file
 [*]
-end_of_line = lf
-insert_final_newline = true
-
-# Set default charset
-[*]
 charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 # 4 space indentation
 [*.java]
-indent_style = space
 indent_size = 4
+
+# 2 space indentation
+[*.xml]
+indent_size = 2
