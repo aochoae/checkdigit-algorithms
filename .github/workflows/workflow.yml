@@ -28,7 +28,7 @@ jobs:
           java-version: ${{ matrix.java }}
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package --file pom.xml -Dgpg.skip=true
 
   sonarcloud:
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >-
-          mvn -B verify sonar:sonar
+          mvn -B verify sonar:sonar -Dgpg.skip=true
           -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
           -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
           -Dsonar.host.url=https://sonarcloud.io
